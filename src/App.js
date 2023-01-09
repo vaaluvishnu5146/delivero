@@ -1,17 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { Counter } from './pages/Counter';
-import Counts from './Component/CounterComponent';
-import ProductsListings from './pages/product-listings';
+import React from "react";
+import "./App.css";
+import ProductListing from "./pages/ProductListing";
+import Cart from "./pages/Cart";
+import Orders from "./pages/Orders";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./Component/Navbar";
 
 function App() {
   return (
     <div className="App">
-      {/* <Counts />
-      <Counter /> */}
-      <ProductsListings />
-
+      <Navbar />
+      <Routes>
+        <Route exact path="/" element={<ProductListing />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/orders" element={<Orders />} />
+      </Routes>
     </div>
   );
 }

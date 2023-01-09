@@ -1,30 +1,15 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 export const cart = createSlice({
-  name: 'cart',
+  name: "cart",
   initialState: {
     cart: [],
     items: [
-        {
-            id: 1,
-            name: 'Dosa Tava',
-            price: 299
-        },
-        {
-            id: 2,
-            name: 'Pressure Cooker',
-            price: 1266
-        },
-        {
-            id: 3,
-            name: 'Empty Containers',
-            price: 355
-        },
-        {
-            id: 4,
-            name: 'Knife',
-            price: 78
-        },
+      {
+        id: 1,
+        name: "Dosa Tava",
+        price: 299,
+      },
     ],
   },
   reducers: {
@@ -35,18 +20,18 @@ export const cart = createSlice({
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
       // return state.items
-      state.cart.push(product)
+      state.cart.push(product);
     },
     removeProduct: (state, action) => {
-      state.value -= 1
+      state.value -= 1;
     },
     incrementByQuantity: (state, action) => {
-        state.value -= 1
-      },
+      state.value -= 1;
+    },
   },
-})
+});
 
 // Action creators are generated for each case reducer function
-export const { addProduct, removeProduct, incrementByQuantity } = cart.actions
+export const { addProduct, removeProduct, incrementByQuantity } = cart.actions;
 
-export default cart.reducer
+export default cart.reducer;
