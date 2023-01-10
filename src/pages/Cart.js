@@ -1,15 +1,16 @@
 import React from "react";
 import CartListingCard from "../Component/Card/CartListingCard";
-import { pizzas } from "./ProductListing";
+import { useSelector, useDispatch } from "react-redux";
 
 export default function Cart() {
+  const { items = [] } = useSelector((state) => state.cart);
   return (
     <div className="app_container d-flex">
       <div className="cart-product-listing p-5">
         <h3 className="mb-3">Cart Items (3)</h3>
         <div className="cart-listing">
-          {pizzas &&
-            pizzas.map((item, i) => <CartListingCard key={i} data={item} />)}
+          {items &&
+            items.map((item, i) => <CartListingCard key={i} data={item} />)}
         </div>
       </div>
       <div className="cart-price-calculator px-3 py-5">

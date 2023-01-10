@@ -1,7 +1,7 @@
 import React from "react";
 import { ButtonGroup, Button } from "reactstrap";
 
-export default function QuantityButton({}) {
+export default function QuantityButton({ quantity = 0 }) {
   return (
     <ButtonGroup className="my-2" size="sm">
       <Button outline>-</Button>
@@ -11,7 +11,7 @@ export default function QuantityButton({}) {
           height: "50px",
           textAlign: "center",
         }}
-        value="0"
+        value={quantity}
       />
       <Button outline>+</Button>
     </ButtonGroup>

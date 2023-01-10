@@ -10,7 +10,7 @@ import {
   Col,
 } from "reactstrap";
 export const inrSymbol = "₹";
-export default function ProductCard({ data = {} }) {
+export default function ProductCard({ data = {}, handleCart = () => {} }) {
   return (
     <Card
       style={{
@@ -25,9 +25,9 @@ export default function ProductCard({ data = {} }) {
         <div className="add-to-cart-button-container">
           <CardSubtitle className="text-danger" tag="h3">
             {inrSymbol}
-            {data.price}
+            {data.actualPrice}
           </CardSubtitle>
-          <Button>Add to cart</Button>
+          <Button onClick={() => handleCart(data)}>Add to cart</Button>
         </div>
       </CardBody>
     </Card>

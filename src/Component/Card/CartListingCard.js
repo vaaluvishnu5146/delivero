@@ -13,7 +13,7 @@ export default function CartListingCard({ data = {} }) {
             </Col>
             <Col className="py-3">
               <CardTitle tag="h5">{data.name}</CardTitle>
-              <QuantityButton />
+              <QuantityButton quantity={data.quantity} />
             </Col>
           </Row>
         </Card>
